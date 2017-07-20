@@ -299,6 +299,10 @@ ul, ol, dl { margin-bottom: 20px; }
 
 .telegram-text { position: relative; top: -10px; left: 10px; }
 
+table { table-layout: fixed; }
+
+table th, table td { width: 50%; }
+
 /* COMMON STYLES */
 hr { height: 0; margin-top: 1em; margin-bottom: 1em; border: 0; border-top: solid 1px #ddd; }
 
@@ -379,7 +383,8 @@ footer a:hover { color: #444; }
   #main-content { width: 490px; }
   #main-content h1:before, #main-content h2:before, #main-content h3:before, #main-content h4:before, #main-content h5:before, #main-content h6:before { padding-right: 0; margin-left: 0; content: none; } }
 /* All Mobile Sizes (devices and browser) */
-@media only screen and (max-width: 767px) { .inner { width: 93%; }
+@media only screen and (max-width: 767px) { .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th { padding-left: 165px; }
+  .inner { width: 93%; }
   .title { font-size: 50px; color: #fff; }
   .telegram-text { position: relative; top: -5px; left: 10px; }
   header { padding: 20px 0; }
@@ -392,6 +397,15 @@ footer a:hover { color: #444; }
   #main-content, aside#sidebar { float: none; width: 100% !important; }
   aside#sidebar { min-height: 0; padding: 20px 0; margin-top: 20px; background-image: none; border-top: solid 1px #ddd; }
   aside#sidebar a.button { display: none; }
-  #main-content h1:before, #main-content h2:before, #main-content h3:before, #main-content h4:before, #main-content h5:before, #main-content h6:before { padding-right: 0; margin-left: 0; content: none; } }
+  #main-content h1:before, #main-content h2:before, #main-content h3:before, #main-content h4:before, #main-content h5:before, #main-content h6:before { padding-right: 0; margin-left: 0; content: none; }
+  table, thead, tbody, th, td, tr { display: block; }
+  table th, table td { width: auto; }
+  thead tr { position: absolute; top: -9999px; left: -9999px; }
+  tr { border: 1px solid #ccc; }
+  td { border: none; border-bottom: 1px solid #eee; position: relative; padding-left: 50%; }
+  td:before { position: absolute; top: 6px; left: 6px; width: 45%; padding-right: 10px; white-space: nowrap; }
+  td:nth-of-type(1):before { content: "Nome Gruppo"; }
+  td:nth-of-type(2):before { content: "Descrizione"; }
+  td:nth-of-type(3):before { content: "Link"; } }
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
